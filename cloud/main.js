@@ -1,10 +1,10 @@
-var common = require('cloud/cloudfunction/common.js');
-var push = require('cloud/cloudfunction/push_notification.js');
-var integrity = require('cloud/cloudfunction/data_integrity.js');
-var jobs = require('cloud/cloudfunction/background_jobs.js');
-var migration = require('cloud/cloudfunction/data_migration.js');
-var init = require('cloud/cloudfunction/init_classes.js');
-var linkImporter = require('cloud/cloudfunction/link_importer.js');
+var common = require('./cloudfunction/common.js');
+var push = require('./cloudfunction/push_notification.js');
+var integrity = require('./cloudfunction/data_integrity.js');
+var jobs = require('./cloudfunction/background_jobs.js');
+var migration = require('./cloudfunction/data_migration.js');
+var init = require('./cloudfunction/init_classes.js');
+var linkImporter = require('./cloudfunction/link_importer.js');
 
 
 //Parse.Cloud.define("migrate", common.getFuncSeries(migration.recomputeFeedbackPoints));

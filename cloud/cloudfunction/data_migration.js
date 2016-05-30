@@ -1,5 +1,5 @@
-var common = require('cloud/cloudfunction/common.js');
-var integrity = require('cloud/cloudfunction/data_integrity.js');
+var common = require('./common.js');
+var integrity = require('./data_integrity.js');
 
 /**
  * data migration

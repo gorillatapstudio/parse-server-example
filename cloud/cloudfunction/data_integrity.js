@@ -1,4 +1,4 @@
-var common = require('cloud/cloudfunction/common.js');
+var common = require('./common.js');
 
 
 
