@@ -1,4 +1,4 @@
-var Image = require('parse-image');
+//var Image = require('parse-image');
 
 /**
  * import link
@@ -81,40 +81,40 @@ function findString(src, startStrs, endString) {
 
  
 function getImage(url, maxImageSize, maxThumbSize, callback) {
-	var imageBuffer;
-	var originalImage;
-	Parse.Cloud.httpRequest({ url: url }).then(function(response) {
-		var image = new Image();
-	  	return image.setData(response.buffer);
-	}).then(function(image) {
-		originalImage = image;
-		var ratio = image.width() / image.height();
-		if (ratio > 1) {
-			var height = Math.min(maxImageSize, image.height());
-	  		return image.scale({ width: height * ratio, height: height });
-	  	} else {
-	  		var width = Math.min(maxImageSize, image.width());
-		  	return image.scale({ width: width, height: width / ratio});
-		}
-	}).then(function(image) {
-		return image.data();
-	}).then(function(buffer) {
-		imageBuffer = buffer;
-		var ratio = originalImage.width() / originalImage.height();
-		if (ratio > 1) {
-			var height = Math.min(maxThumbSize, originalImage.height());
-	  		return originalImage.scale({ width: height * ratio, height: height });
-	  	} else {
-	  		var width = Math.min(maxThumbSize, originalImage.width());
-		  	return originalImage.scale({ width: width, height: width / ratio});
-		}
-	}).then(function(image) {
-		return image.data();
-	}).then(function(thumbBuffer) {
-		var bytes = imageBuffer.toString("base64");
-	  	var bytesThumb = thumbBuffer.toString("base64");
-		callback(bytes, bytesThumb);
-	}); 
+// 	var imageBuffer;
+// 	var originalImage;
+// 	Parse.Cloud.httpRequest({ url: url }).then(function(response) {
+// 		var image = new Image();
+// 	  	return image.setData(response.buffer);
+// 	}).then(function(image) {
+// 		originalImage = image;
+// 		var ratio = image.width() / image.height();
+// 		if (ratio > 1) {
+// 			var height = Math.min(maxImageSize, image.height());
+// 	  		return image.scale({ width: height * ratio, height: height });
+// 	  	} else {
+// 	  		var width = Math.min(maxImageSize, image.width());
+// 		  	return image.scale({ width: width, height: width / ratio});
+// 		}
+// 	}).then(function(image) {
+// 		return image.data();
+// 	}).then(function(buffer) {
+// 		imageBuffer = buffer;
+// 		var ratio = originalImage.width() / originalImage.height();
+// 		if (ratio > 1) {
+// 			var height = Math.min(maxThumbSize, originalImage.height());
+// 	  		return originalImage.scale({ width: height * ratio, height: height });
+// 	  	} else {
+// 	  		var width = Math.min(maxThumbSize, originalImage.width());
+// 		  	return originalImage.scale({ width: width, height: width / ratio});
+// 		}
+// 	}).then(function(image) {
+// 		return image.data();
+// 	}).then(function(thumbBuffer) {
+// 		var bytes = imageBuffer.toString("base64");
+// 	  	var bytesThumb = thumbBuffer.toString("base64");
+// 		callback(bytes, bytesThumb);
+// 	}); 
 }
 
 
