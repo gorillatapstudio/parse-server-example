@@ -3,8 +3,8 @@ $(function() {
 
   Parse.$ = jQuery;
 
-  Parse.initialize(config.parseAppId, config.parseJSClientKey);
-
+  Parse.initialize(config.parseAppId); //, config.parseJSClientKey);
+  Parse.serverURL = "https://exampletwo.azurewebsites.net/parse";
 
   var FeedEntry = Parse.Object.extend("FeedEntry", {	
     
