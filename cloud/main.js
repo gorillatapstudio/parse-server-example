@@ -8,7 +8,7 @@ var linkImporter = require('./cloudfunction/link_importer.js');
 
 
 //Parse.Cloud.define("migrate", common.getFuncSeries(migration.recomputeFeedbackPoints));
-Parse.Cloud.job("migrate", common.getFuncSeries(migration.bigMigrationSeries));
+//Parse.Cloud.job("migrate", common.getFuncSeries(migration.bigMigrationSeries));
 Parse.Cloud.define("migrate", common.getFuncSeries(migration.bigMigrationSeries));
 Parse.Cloud.define("integrity", common.getFuncParallel(integrity.deleteGhostObject));
 Parse.Cloud.define("oneFunc", common.getFuncSeries(function() {

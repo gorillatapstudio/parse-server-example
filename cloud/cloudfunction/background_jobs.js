@@ -36,19 +36,19 @@ Parse.Cloud.define("countEditionSeries", function(request, response) {
 	countKeys("Edition", "edition", response, false);
 });
 
-Parse.Cloud.job("countEditionSeries", function(request, response) {
-  	Parse.Cloud.useMasterKey();
-	countKeys("Edition", "edition", response, false);	
-});
+// Parse.Cloud.job("countEditionSeries", function(request, response) {
+//   	Parse.Cloud.useMasterKey();
+// 	countKeys("Edition", "edition", response, false);	
+// });
 
 Parse.Cloud.define("countHashtagSeries", function(request, response) {
 	countKeys("Hashtag", "hashtags", response, true);
 });
 
-Parse.Cloud.job("countHashtagSeries", function(request, response) {
-  	Parse.Cloud.useMasterKey();
-	countKeys("Hashtag", "hashtags", response, true);	
-});
+// Parse.Cloud.job("countHashtagSeries", function(request, response) {
+//   	Parse.Cloud.useMasterKey();
+// 	countKeys("Hashtag", "hashtags", response, true);	
+// });
 
 function countKeys(className, keyName, response, isContains){
 	var FeedEntry = Parse.Object.extend("FeedEntry");
