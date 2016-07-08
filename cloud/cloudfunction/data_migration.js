@@ -2,7 +2,7 @@ var common = require('./common.js');
 var integrity = require('./data_integrity.js');
 
 /**
- * data migration
+ * data migration Deprecated
  */
 exports.bigMigrationSeries = function() {
 	return [
@@ -24,6 +24,9 @@ exports.bigMigrationSeries = function() {
 	];
 }
 
+/*
+ * integrity computation
+ */
 exports.recomputeFeedbackPoints = function() {
 	return [
 		exports.clearClass,

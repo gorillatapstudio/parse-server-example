@@ -8,8 +8,6 @@ exports.actionFeed = {
 	"ME_SHARE_MSG_INTENT" : { "countKey" : "nShares", "listKey" : "usersShared", "points" : 2 } ,
 	"ME_REPORT_FEED" : { "countKey" : "nReports", "listKey" : "usersReported", "points" : -20 } ,
 	"ME_PUBLIC_PUSH_FEED" : { "countKey" : "nPushes", "listKey" : "usersPushed", "points" : 12 } ,
-	"ME_ORDER_FEED" : { "countKey" : "nOrders", "listKey" : "ordersPosted", "points" : 0 } 
-
 	};
 exports.actionFeedEntry = {
 	"ME_POST_FEED" : { "countKey" : "nPosts", "listKey" : null, "points" : 20 } ,
@@ -24,7 +22,9 @@ exports.actionUser = {
 exports.actionMessage = {
 	"ME_MESSAGE_USER" : { "countKey" : "nMessages", "listKey" : null, "points" : 2 } 
 	};
-
+exports.actionOrder = {
+	"ME_ORDER_FEED" : { "countKey" : "nOrders", "listKey" : "ordersPosted", "points" : 20 } ,
+}
 
 
 exports.getFuncParallel = function(funcName) {
